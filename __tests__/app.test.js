@@ -49,7 +49,7 @@ describe('lazy-bouncer routes', () => {
     });
   });
 
-  it('returns the current user', async () => { // Work From Here
+  it('returns the current user', async () => { // Test Works
     const [agent, user] = await registerAndLogin();
     const me = await agent.get('/api/v1/users/me');
 
@@ -60,7 +60,7 @@ describe('lazy-bouncer routes', () => {
     });
   });
 
-  it.skip('should return a 401 when signed out and listing all users', async () => {
+  it('should return a 401 when signed out and listing all users', async () => {
     const res = await request(app).get('/api/v1/users');
 
     expect(res.body).toEqual({
